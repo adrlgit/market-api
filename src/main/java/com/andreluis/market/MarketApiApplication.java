@@ -1,6 +1,7 @@
 package com.andreluis.market;
 
 import com.andreluis.market.domain.Categoria;
+import com.andreluis.market.repositories.CategoriaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
