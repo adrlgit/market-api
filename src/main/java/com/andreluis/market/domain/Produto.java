@@ -1,6 +1,9 @@
 package com.andreluis.market.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,6 +21,8 @@ public class Produto implements Serializable {
     private String nome;
     private Double preco;
 
+
+    @JsonBackReference
     @ManyToMany
     @JoinTable(name = "PRODUTO_CATEGORIA",
         joinColumns = @JoinColumn(name = "produto_id"),
@@ -32,5 +37,37 @@ public class Produto implements Serializable {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
+    public List<Categoria> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
     }
 }
