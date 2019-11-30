@@ -1,10 +1,7 @@
 package com.andreluis.market.enums;
 
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter
-@Setter
+
 public enum TipoCliente {
 
     PESSOAFISICA(1, "Pessoa Física"),
@@ -16,6 +13,14 @@ public enum TipoCliente {
     private TipoCliente(int cod, String descricao){
         this.cod = cod;
         this.descricao = descricao;
+    }
+
+    public int getCod() {
+        return cod;
+    }
+
+    public String getDescricao() {
+        return descricao;
     }
 
     public static TipoCliente toEnum(Integer cod) {
