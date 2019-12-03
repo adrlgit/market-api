@@ -1,6 +1,7 @@
 package com.andreluis.market.domain;
 
 import com.andreluis.market.enums.TipoCliente;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
