@@ -1,6 +1,7 @@
 package com.andreluis.market.domain;
 
 import com.andreluis.market.enums.TipoCliente;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.Getter;
@@ -33,6 +34,7 @@ public class Cliente  implements Serializable {
     @CollectionTable(name="TELEFONE")
     private Set<String> telefones = new HashSet<>();
 
+    @JsonBackReference
     @OneToMany(mappedBy = "cliente")
     private List<Pedido> pedidos = new ArrayList<>();
     public Cliente(){
