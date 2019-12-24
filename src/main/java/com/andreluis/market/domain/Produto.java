@@ -1,10 +1,7 @@
 package com.andreluis.market.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -25,7 +22,7 @@ public class Produto implements Serializable {
     private Double preco;
 
 
-    @JsonBackReference
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "PRODUTO_CATEGORIA",
         joinColumns = @JoinColumn(name = "produto_id"),

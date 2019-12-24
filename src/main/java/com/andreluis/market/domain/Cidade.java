@@ -1,9 +1,7 @@
 package com.andreluis.market.domain;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,7 +17,6 @@ public class Cidade  implements Serializable {
     private  String nome;
 
 
-    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "ESTADO_ID")
     private Estado estado;
